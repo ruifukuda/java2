@@ -7,6 +7,11 @@ public class ColorPen{
 	public ColorPen(){
 	}
 
+
+	public ColorPen(String color){
+		this.color = color;
+	}
+	 
 	public ColorPen(String color, int len){
 		//自クラスのコンストラクタの呼び出し
 		//this()は必ず1行目にある必要がある
@@ -14,10 +19,6 @@ public class ColorPen{
 		this.len = len;
 	}
 
-	public ColorPen(String color){
-		this.color = color;
-	}
-	 
 	//メソッド
 	public void write(){
 		if(this.len == 0){
@@ -33,6 +34,7 @@ public class ColorPen{
 			str += "=";
 		}
 		str += ">";
+		str += "(" + this.color +  ")";
 		System.out.println(str);
 	}
 }
