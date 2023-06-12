@@ -1,6 +1,6 @@
 public class Hero{
-	String name = "ミナト";
-	int hp = 100;
+	private String name = "ミナト";
+	private int hp = 100;
 
 	public Hero(){
 		System.out.println("Heroクラスのコンストラクタ");
@@ -13,5 +13,28 @@ public class Hero{
 	}
 	public void run(){
 		System.out.println(this.name + "は逃げ出した!");
+	}
+
+	public String getName(){
+		return this.name;
+	}
+	public int getHp(){
+		return this.hp;
+	}
+	public void setName(String name){
+		if(name.length() < 3){
+			throw new IllegalArgumentException("名前は3文字以上");
+		}
+		this.name = name;
+	}
+	public void setHp(int hp){
+		if(hp < 0 ){
+			this.hp = 0;
+		}else{
+			this.hp = hp;
+		}
+	}
+	public String toString(){
+		return String.format("名前:%s,hp:%d",this.getName(), this.getHp());
 	}
 }
