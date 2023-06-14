@@ -3,7 +3,7 @@ public class Hero{
 	private int hp = 100;
 
 	public Hero(){
-		System.out.println("Heroクラスのコンストラクタ");
+		//System.out.println("Heroクラスのコンストラクタ");
 	}
 	
 	public void attack(Matango m){
@@ -14,18 +14,6 @@ public class Hero{
 	public void run(){
 		System.out.println(this.name + "は逃げ出した!");
 	}
-	@Override
-	public boolean equals(Object o){
-		if(this == o){
-			return true;
-		}
-		if(o instanceof Hero){
-			Hero h = (Hero)o;
-			if(this.name.equals(h.name){
-				return true;
-			}
-		}
-		return false;
 
 	public String getName(){
 		return this.name;
@@ -48,5 +36,18 @@ public class Hero{
 	}
 	public String toString(){
 		return String.format("名前:%s,hp:%d",this.getName(), this.getHp());
+	}
+	@Override
+	public boolean equals(Object o){
+		if(this == o){
+			return true;
+		}
+		if(o instanceof Hero){
+			Hero h = (Hero)o;
+			if(this.name.equals(h.name)){
+				return true;
+			}
+		}
+		return false;
 	}
 }

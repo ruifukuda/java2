@@ -10,12 +10,14 @@ public class EmptyApp{
 		for(Object o : data){
 			System.out.println(o.toString());
 		}
+
 		Hero hero = new Hero();
 		System.out.println(hero);
 		if(hero.equals(data[1])){
 			System.out.println("同価です");
 		}
-		hero.name = "ゼシカ";
+
+		hero.setName("ゼシカ");
 		if(hero.equals(data[1])){
 			System.out.println("同価です");
 		}else{
