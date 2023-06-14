@@ -14,4 +14,21 @@ public class Hero{
 	public void run(){
 		System.out.println(this.name + "は逃げ出した!");
 	}
+	@Override
+	public String toString(){
+		return String.format("名前:%s/HP:%d",this.name, this.hp);
+	}
+	@Override
+	public boolean equals(Object o){
+		if(this == o){
+			return true;
+		}
+		if(o instanceof Hero){
+			Hero h = (Hero)o;
+			if(this.name.equals(h.name){
+				return true;
+			}
+		}
+		return false;
+	}
 }
